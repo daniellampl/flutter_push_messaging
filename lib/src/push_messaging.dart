@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:meta/meta.dart';
-import 'package:push_messaging/push_messaging.dart';
+import 'package:push_messaging/flutter_push_messaging.dart';
 
 /// The default icon shown in notification on Android devices.
 const kDefaultAndroidNotificationIcon = 'ic_default_push_notification';
@@ -25,7 +25,7 @@ abstract class Notifications {
   /// Normally when the application launches.
   ///
   /// On Android [enableForegroundNotifications] is only needed if the
-  /// [androidSettings] don't contain a default channel and [PushMessaging]
+  /// [androidSettings] don't contain a default channel and [FlutterPushMessaging]
   /// needs to create the default channel.
   /// {@endtemplate}
   Future<void> setupNotifications({
@@ -58,16 +58,16 @@ abstract class Notifications {
   });
 }
 
-/// {@template push_messaging}
+/// {@template flutter_push_messaging}
 /// A class responsible for interacting with the push messaging of the
 /// application.
 /// {@endtemplate}
-class PushMessaging extends _PushMessaging {}
+class FlutterPushMessaging extends _FlutterPushMessaging {}
 
-/// {@macro push_messaging}
-class _PushMessaging implements Notifications {
-  /// {@macro push_messaging}
-  _PushMessaging({
+/// {@macro flutter_push_messaging}
+class _FlutterPushMessaging implements Notifications {
+  /// {@macro flutter_push_messaging}
+  _FlutterPushMessaging({
     FirebaseMessaging? firebaseMessaging,
     FlutterLocalNotificationsPlugin? localNotificationsPlugin,
   })  : _firebaseMessaging = firebaseMessaging ?? FirebaseMessaging.instance,

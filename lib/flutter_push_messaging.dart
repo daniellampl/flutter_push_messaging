@@ -6,5 +6,5 @@ export 'package:flutter_local_notifications/flutter_local_notifications.dart'
     show AndroidNotificationChannel, Importance;
 
 export 'src/models/models.dart';
-export 'src/push_messaging.dart' show PushMessaging;
+export 'src/push_messaging.dart' show FlutterPushMessaging;
 export 'src/widgets/widgets.dart';

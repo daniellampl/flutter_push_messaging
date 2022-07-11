@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/widgets.dart';
-import 'package:push_messaging/push_messaging.dart';
+import 'package:push_messaging/flutter_push_messaging.dart';
 import 'package:push_messaging/src/push_messaging.dart';
 
 /// Signature for callbacks that get triggered when a [RemoteMessage] is
@@ -28,7 +28,7 @@ class PushMessagingHandler extends StatefulWidget {
     super.key,
   });
 
-  /// The [PushMessaging] instance used for dealing with push notifications.
+  /// The [FlutterPushMessaging] instance used for dealing with push notifications.
   final Notifications? notifications;
 
   /// The callback the gets triggered when a message is received while the
@@ -102,7 +102,7 @@ class _PushMessagingHandlerState extends State<PushMessagingHandler> {
 
   @override
   void initState() {
-    _notifications = widget.notifications ?? PushMessaging();
+    _notifications = widget.notifications ?? FlutterPushMessaging();
 
     // we initialize PushMessaging here since it does not take too much time
     // and we also only use it once the initialization is done.
