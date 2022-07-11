@@ -1,0 +1,17 @@
+name: push_messaging
+description: A Very Good Project created by Very Good CLI.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  firebase_messaging: ^11.4.4
+  flutter:
+    sdk: flutter
+  flutter_local_notifications: ^10.0.0-dev.17
+  meta: ^1.7.0
+
+dev_dependencies:
+  deckweiss_lints: ^1.0.0+1
